@@ -1,5 +1,5 @@
 
-package proyectoagroservicio;
+package clases;
 
 import java.sql.ResultSet;
 

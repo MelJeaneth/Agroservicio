@@ -5,6 +5,8 @@
  */
 package proyectoagroservicio;
 
+import Formularios.FrmMenuPrincipal;
+
 /**
  *
  * @author Mi Pc

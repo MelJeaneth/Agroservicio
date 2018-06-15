@@ -1,6 +1,7 @@
 
-package proyectoagroservicio;
+package clases;
 
+import clases.Conexion;
 import java.sql.ResultSet;
 
 

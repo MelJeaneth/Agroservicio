@@ -3,18 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package proyectoagroservicio;
+package Formularios;
+
+import java.awt.Image;
+import javax.swing.ImageIcon;
 
 /**
  *
  * @author Mi Pc
  */
 public class FrmVentas extends javax.swing.JFrame {
-
-    /**
-     * Creates new form FrmVentas
-     */
-    
+ImageIcon fondo = new ImageIcon(getClass().getResource("/iconos/fondo2.jpg"));
+    ImageIcon  fond;
     
      FrmNuevaVenta CargarNuevaVenta= new FrmNuevaVenta();
      FrmHistorial CargarHistorial= new FrmHistorial();
@@ -22,6 +22,8 @@ public class FrmVentas extends javax.swing.JFrame {
     
     public FrmVentas() {
         initComponents();
+        this.fond = new ImageIcon(fondo.getImage().getScaledInstance(lblfondo.getWidth(), lblfondo.getHeight(), Image.SCALE_DEFAULT));
+        lblfondo.setIcon(fond);
     }
 
     /**
@@ -35,15 +37,27 @@ public class FrmVentas extends javax.swing.JFrame {
 
         btnVerHistorial = new javax.swing.JButton();
         btnAgregarNuevaVenta = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        lblfondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(540, 580));
+        setMinimumSize(new java.awt.Dimension(540, 580));
+        setPreferredSize(new java.awt.Dimension(540, 580));
+        setResizable(false);
+        setSize(new java.awt.Dimension(540, 580));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnVerHistorial.setText("Ver historial");
+        btnVerHistorial.setMaximumSize(new java.awt.Dimension(60, 60));
+        btnVerHistorial.setMinimumSize(new java.awt.Dimension(60, 60));
+        btnVerHistorial.setPreferredSize(new java.awt.Dimension(60, 60));
         btnVerHistorial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVerHistorialActionPerformed(evt);
             }
         });
+        getContentPane().add(btnVerHistorial, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 220, 170, 170));
 
         btnAgregarNuevaVenta.setText("Agregar Nueva Venta");
         btnAgregarNuevaVenta.addActionListener(new java.awt.event.ActionListener() {
@@ -51,27 +65,17 @@ public class FrmVentas extends javax.swing.JFrame {
                 btnAgregarNuevaVentaActionPerformed(evt);
             }
         });
+        getContentPane().add(btnAgregarNuevaVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 220, 170, 170));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(74, 74, 74)
-                .addComponent(btnVerHistorial)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
-                .addComponent(btnAgregarNuevaVenta)
-                .addGap(70, 70, 70))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(126, 126, 126)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnVerHistorial, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAgregarNuevaVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(119, Short.MAX_VALUE))
-        );
+        jLabel1.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Ventas");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, 214, 47));
+
+        lblfondo.setMaximumSize(new java.awt.Dimension(540, 580));
+        lblfondo.setMinimumSize(new java.awt.Dimension(540, 580));
+        lblfondo.setPreferredSize(new java.awt.Dimension(540, 580));
+        getContentPane().add(lblfondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(-2, 1, 540, 590));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -124,5 +128,7 @@ public class FrmVentas extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregarNuevaVenta;
     private javax.swing.JButton btnVerHistorial;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel lblfondo;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,5 +1,6 @@
-package proyectoagroservicio;
+package Formularios;
 
+import java.awt.Dimension;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 
@@ -25,6 +26,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
 
     public FrmMenuPrincipal() {
         initComponents();
+        this.setSize(new Dimension(540, 625));
         this.icon = new ImageIcon(imag.getImage().getScaledInstance(lblimagen.getWidth(), lblimagen.getHeight(), Image.SCALE_DEFAULT));
         lblimagen.setIcon(icon);
         this.ped = new ImageIcon(pedido.getImage().getScaledInstance(btnPedidos.getWidth(), btnPedidos.getHeight(), Image.SCALE_DEFAULT));
@@ -56,7 +58,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         lblfondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setResizable(false);
+        setSize(new java.awt.Dimension(540, 580));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnProductos.setBackground(new java.awt.Color(225, 251, 173));
@@ -105,7 +107,11 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnInventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 360, 220, 200));
-        getContentPane().add(lblfondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 580));
+
+        lblfondo.setMaximumSize(new java.awt.Dimension(540, 625));
+        lblfondo.setMinimumSize(new java.awt.Dimension(540, 625));
+        lblfondo.setPreferredSize(new java.awt.Dimension(540, 625));
+        getContentPane().add(lblfondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 625));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
