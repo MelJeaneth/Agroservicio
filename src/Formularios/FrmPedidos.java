@@ -8,8 +8,11 @@ import javax.swing.ImageIcon;
 public class FrmPedidos extends javax.swing.JFrame {
 ImageIcon fondo = new ImageIcon(getClass().getResource("/iconos/fondo2.jpg"));
     ImageIcon  fond;
+    FrmAgregarPedido nuevoPedido=new FrmAgregarPedido();
     public FrmPedidos() {
         initComponents();
+        //Configuracion
+        this.setLocationRelativeTo(null);
         this.setSize(new Dimension(540, 625));
         this.fond = new ImageIcon(fondo.getImage().getScaledInstance(lblfondo.getWidth(), lblfondo.getHeight(), Image.SCALE_DEFAULT));
         lblfondo.setIcon(fond);
@@ -27,16 +30,25 @@ ImageIcon fondo = new ImageIcon(getClass().getResource("/iconos/fondo2.jpg"));
         btnNuevoPedido = new javax.swing.JButton();
         btnHistorialPedidos = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        btnRegresar = new javax.swing.JButton();
         lblfondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setIconImage(new ImageIcon(getClass().getResource("/iconos/pedidoscamion.png")).getImage());
         setMaximumSize(new java.awt.Dimension(540, 580));
         setMinimumSize(new java.awt.Dimension(540, 580));
         setName("framePedidos"); // NOI18N
+        setUndecorated(true);
         setPreferredSize(new java.awt.Dimension(540, 580));
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnNuevoPedido.setText("Agregar pedido");
+        btnNuevoPedido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNuevoPedidoActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnNuevoPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 229, 220));
 
         btnHistorialPedidos.setText("Historial pedidos");
@@ -47,6 +59,14 @@ ImageIcon fondo = new ImageIcon(getClass().getResource("/iconos/fondo2.jpg"));
         jLabel1.setText("Pedidos");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, 241, 85));
 
+        btnRegresar.setText("Regresar");
+        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegresarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 540, 100, 50));
+
         lblfondo.setMaximumSize(new java.awt.Dimension(540, 625));
         lblfondo.setMinimumSize(new java.awt.Dimension(540, 625));
         lblfondo.setPreferredSize(new java.awt.Dimension(540, 625));
@@ -54,6 +74,14 @@ ImageIcon fondo = new ImageIcon(getClass().getResource("/iconos/fondo2.jpg"));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnNuevoPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoPedidoActionPerformed
+nuevoPedido.show();
+    }//GEN-LAST:event_btnNuevoPedidoActionPerformed
+
+    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btnRegresarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -93,6 +121,7 @@ ImageIcon fondo = new ImageIcon(getClass().getResource("/iconos/fondo2.jpg"));
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnHistorialPedidos;
     private javax.swing.JButton btnNuevoPedido;
+    private javax.swing.JButton btnRegresar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblfondo;
     // End of variables declaration//GEN-END:variables

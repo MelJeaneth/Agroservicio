@@ -17,7 +17,7 @@ ImageIcon fondo = new ImageIcon(getClass().getResource("/iconos/fondo2.jpg"));
     ImageIcon  fond;
     
      FrmNuevaVenta CargarNuevaVenta= new FrmNuevaVenta();
-     FrmHistorial CargarHistorial= new FrmHistorial();
+     FrmHistorialVentas CargarHistorial= new FrmHistorialVentas();
     
     
     public FrmVentas() {

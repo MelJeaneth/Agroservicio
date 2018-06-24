@@ -5,7 +5,7 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 
 public class FrmMenuPrincipal extends javax.swing.JFrame {
-
+//codigo para agregar imagenes
     ImageIcon imag = new ImageIcon(getClass().getResource("/iconos/agricortado.png"));
     ImageIcon icon;
     ImageIcon pedido = new ImageIcon(getClass().getResource("/iconos/pedidoscamion.png"));
@@ -18,6 +18,8 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
     ImageIcon  invent;
     ImageIcon fondo = new ImageIcon(getClass().getResource("/iconos/fondo2.jpg"));
     ImageIcon  fond;
+    
+    //codigo para llamar formularios
     FrmProductos CargarProducto=new FrmProductos();
     FrmPedidos CargarPedido=new FrmPedidos();
     FrmVentas CargarVentas=new FrmVentas();
@@ -26,6 +28,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
 
     public FrmMenuPrincipal() {
         initComponents();
+        //Ajustando imagenes con su etiqueta o boton
         this.setSize(new Dimension(540, 625));
         this.icon = new ImageIcon(imag.getImage().getScaledInstance(lblimagen.getWidth(), lblimagen.getHeight(), Image.SCALE_DEFAULT));
         lblimagen.setIcon(icon);
@@ -39,6 +42,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         btnInventario.setIcon(invent);
         this.fond = new ImageIcon(fondo.getImage().getScaledInstance(lblfondo.getWidth(), lblfondo.getHeight(), Image.SCALE_DEFAULT));
         lblfondo.setIcon(fond);
+        
     }
 
     /**
@@ -55,9 +59,11 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         lblimagen = new javax.swing.JLabel();
         btnPedidos = new javax.swing.JButton();
         btnInventario = new javax.swing.JButton();
+        btnCerrar = new javax.swing.JButton();
         lblfondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         setSize(new java.awt.Dimension(540, 580));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -108,10 +114,18 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         });
         getContentPane().add(btnInventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 360, 220, 200));
 
+        btnCerrar.setText("Cerrar");
+        btnCerrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCerrarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 20, 90, 30));
+
         lblfondo.setMaximumSize(new java.awt.Dimension(540, 625));
         lblfondo.setMinimumSize(new java.awt.Dimension(540, 625));
         lblfondo.setPreferredSize(new java.awt.Dimension(540, 625));
-        getContentPane().add(lblfondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 625));
+        getContentPane().add(lblfondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 550, 625));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -131,6 +145,10 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
     private void btnInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInventarioActionPerformed
         CargarInventario.show();
     }//GEN-LAST:event_btnInventarioActionPerformed
+
+    private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed
+       System.exit(0);
+    }//GEN-LAST:event_btnCerrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -168,6 +186,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCerrar;
     private javax.swing.JButton btnInventario;
     private javax.swing.JButton btnPedidos;
     private javax.swing.JButton btnProductos;

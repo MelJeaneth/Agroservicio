@@ -249,7 +249,7 @@ public class FrmNuevaVenta extends javax.swing.JFrame {
         
         
         
-         rstProductos = producto.llenarProductos(Integer.parseInt(lblTipo.getText()));
+         rstProductos = producto.llenarProductosDependiendoTipo(Integer.parseInt(lblTipo.getText()));
         try {
             while (rstProductos.next()){
                 productos.addElement(rstProductos.getInt(1));
